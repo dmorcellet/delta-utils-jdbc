@@ -7,17 +7,25 @@ import org.apache.log4j.Logger;
 
 import delta.common.utils.traces.UtilsLoggers;
 
+/**
+ * Clean-up tool methods for JDBC.
+ * @author DAM
+ */
 public class CleanupManager
 {
   private static final Logger _logger=UtilsLoggers.getUtilsLogger();
 
-  public static void cleanup(ResultSet obj_p)
+  /**
+   * Close a result set.
+   * @param resultSet Result set to close.
+   */
+  public static void cleanup(ResultSet resultSet)
   {
     try
     {
-      if(obj_p!=null)
+      if(resultSet!=null)
       {
-        obj_p.close();
+        resultSet.close();
       }
     }
     catch(Exception exception)
@@ -26,13 +34,17 @@ public class CleanupManager
     }
   }
 
-  public static void cleanup(Statement obj_p)
+  /**
+   * Close a statement.
+   * @param statement Statement to close.
+   */
+  public static void cleanup(Statement statement)
   {
     try
     {
-      if(obj_p!=null)
+      if(statement!=null)
       {
-        obj_p.close();
+        statement.close();
       }
     }
     catch(Exception exception)
@@ -41,9 +53,14 @@ public class CleanupManager
     }
   }
 
-  public static void cleanup(Statement stmt_p, ResultSet rs_p)
+  /**
+   * Close a statement and a result set.
+   * @param statement Statement to close.
+   * @param resultSet Result set to close.
+   */
+  public static void cleanup(Statement statement, ResultSet resultSet)
   {
-    cleanup(rs_p);
-    cleanup(stmt_p);
+    cleanup(resultSet);
+    cleanup(statement);
   }
 }

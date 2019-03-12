@@ -17,6 +17,12 @@ public class JDBCTools
 {
   private static final Logger _logger=UtilsLoggers.getUtilsLogger();
 
+  /**
+   * Get the value of a database generated value (for instance a primary key).
+   * @param connection Database connection.
+   * @param index Index of value in the previous insert.
+   * @return A long value or <code>null</code>.
+   */
   public static Long getPrimaryKey(Connection connection, int index)
   {
     Long primaryKey=null;

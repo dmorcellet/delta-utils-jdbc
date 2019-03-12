@@ -10,10 +10,19 @@ import org.apache.log4j.Logger;
 
 import delta.common.utils.traces.UtilsLoggers;
 
+/**
+ * Driver inspector.
+ * @author DAM
+ */
 public class DriverInspector
 {
   private static final Logger _logger=UtilsLoggers.getUtilsLogger();
 
+  /**
+   * Print driver infos on the standard output.
+   * @param d JDBC driver to use.
+   * @param url Data source URL.
+   */
   public static void dumpDriverInfos(Driver d, String url)
   {
     System.out.println("Driver class : "+d.getClass().getName());
@@ -42,6 +51,10 @@ public class DriverInspector
     }
   }
 
+  /**
+   * Dump some database metadata to the standard output.
+   * @param metaData Data to show.
+   */
   public static void dumpMetaData(DatabaseMetaData metaData)
   {
     try
