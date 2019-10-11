@@ -38,10 +38,10 @@ public class DriverInspector
     Properties p=new Properties();
     try
     {
-      DriverPropertyInfo[] infos_l=d.getPropertyInfo(url, p);
-      for(int i=0;i<infos_l.length;i++)
+      DriverPropertyInfo[] infos=d.getPropertyInfo(url, p);
+      for(int i=0;i<infos.length;i++)
       {
-        DriverPropertyInfo info=infos_l[i];
+        DriverPropertyInfo info=infos[i];
         System.out.println(info.name+"="+info.value+" required=("+info.required+") description=("+info.description+") choices=("+Arrays.toString(info.choices)+")");
       }
     }
