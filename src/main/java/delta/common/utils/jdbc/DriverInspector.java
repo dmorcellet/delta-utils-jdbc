@@ -8,15 +8,13 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-import delta.common.utils.traces.UtilsLoggers;
-
 /**
  * Driver inspector.
  * @author DAM
  */
 public class DriverInspector
 {
-  private static final Logger _logger=UtilsLoggers.getUtilsLogger();
+  private static final Logger LOGGER=Logger.getLogger(DriverInspector.class);
 
   /**
    * Print driver infos on the standard output.
@@ -47,7 +45,7 @@ public class DriverInspector
     }
     catch(Exception e)
     {
-      _logger.error("Could not get properties for driver", e);
+      LOGGER.error("Could not get properties for driver", e);
     }
   }
 
@@ -64,7 +62,7 @@ public class DriverInspector
     }
     catch(Exception e)
     {
-      _logger.error("Could not get properties for driver", e);
+      LOGGER.error("Could not get properties for driver", e);
     }
   }
 }

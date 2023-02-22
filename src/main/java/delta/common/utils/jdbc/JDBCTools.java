@@ -7,15 +7,13 @@ import java.sql.Statement;
 
 import org.apache.log4j.Logger;
 
-import delta.common.utils.traces.UtilsLoggers;
-
 /**
  * Tools related to JDBC.
  * @author DAM
  */
 public class JDBCTools
 {
-  private static final Logger _logger=UtilsLoggers.getUtilsLogger();
+  private static final Logger LOGGER=Logger.getLogger(JDBCTools.class);
 
   /**
    * Get the value of a database generated value (for instance a primary key).
@@ -36,7 +34,7 @@ public class JDBCTools
     }
     catch(SQLException sqlException)
     {
-      _logger.error("",sqlException);
+      LOGGER.error("",sqlException);
     }
     finally
     {

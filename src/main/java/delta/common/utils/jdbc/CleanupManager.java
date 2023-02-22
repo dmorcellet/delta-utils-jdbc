@@ -5,15 +5,13 @@ import java.sql.Statement;
 
 import org.apache.log4j.Logger;
 
-import delta.common.utils.traces.UtilsLoggers;
-
 /**
  * Clean-up tool methods for JDBC.
  * @author DAM
  */
 public class CleanupManager
 {
-  private static final Logger _logger=UtilsLoggers.getUtilsLogger();
+  private static final Logger LOGGER=Logger.getLogger(CleanupManager.class);
 
   /**
    * Close a result set.
@@ -30,7 +28,7 @@ public class CleanupManager
     }
     catch(Exception exception)
     {
-      _logger.error("Error on ResultSet closing.", exception);
+      LOGGER.error("Error on ResultSet closing.", exception);
     }
   }
 
@@ -49,7 +47,7 @@ public class CleanupManager
     }
     catch(Exception exception)
     {
-      _logger.error("Error on Statement closing.", exception);
+      LOGGER.error("Error on Statement closing.", exception);
     }
   }
 
