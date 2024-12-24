@@ -6,7 +6,8 @@ import java.sql.DriverPropertyInfo;
 import java.util.Arrays;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Driver inspector.
@@ -14,7 +15,7 @@ import org.apache.log4j.Logger;
  */
 public class DriverInspector
 {
-  private static final Logger LOGGER=Logger.getLogger(DriverInspector.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(DriverInspector.class);
 
   /**
    * Print driver infos on the standard output.

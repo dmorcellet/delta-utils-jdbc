@@ -3,7 +3,8 @@ package delta.common.utils.jdbc;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Clean-up tool methods for JDBC.
@@ -11,7 +12,7 @@ import org.apache.log4j.Logger;
  */
 public class CleanupManager
 {
-  private static final Logger LOGGER=Logger.getLogger(CleanupManager.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(CleanupManager.class);
 
   /**
    * Close a result set.

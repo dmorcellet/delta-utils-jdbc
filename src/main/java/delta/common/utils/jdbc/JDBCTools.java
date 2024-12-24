@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tools related to JDBC.
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class JDBCTools
 {
-  private static final Logger LOGGER=Logger.getLogger(JDBCTools.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(JDBCTools.class);
 
   /**
    * Get the value of a database generated value (for instance a primary key).
